@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    margin-bottom: 1rem;
+}
+
+.theme-switcher, .user-settings {
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.form-check-inline {
+    margin-right: 10px;
+}
+
+.form-check-label {
+    cursor: pointer;
+}
+
+.form-control {
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.footer {
+    background: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+    padding: 10px 0;
+}
+
+.footer p {
+    margin: 0;
+}
