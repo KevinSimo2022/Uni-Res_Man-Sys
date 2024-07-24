@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet">
+    <!-- FontAwesome CSS for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar navbar navbar-expand-lg navbar-light bg-white">
+                <div class="d-flex justify-content-between align-items-center w-100">
+                    <a class="navbar-brand text-center py-3" href="#">
+                        <img src="img/logo.png" alt="Logo" class="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="nav flex-column mt-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <i class="fas fa-tachometer-alt"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-bed"></i> Room and Maintenance
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-cog"></i> Settings
+                            </a>
+                        </li>
+                        <li class="nav-item d-lg-none">
+                            <button class="btn btn-light">
+                                <i class="fas fa-bell"></i>
+                            </button>
+                            <button class="btn btn-light mx-2">
+                                <i class="fas fa-toggle-on"></i> <!-- Switch icon -->
+                            </button>
+                            <img src="img/avatar.png" alt="Avatar" class="avatar-img">
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                <div class="header-container d-none d-md-block">
+                    <header class="header d-flex align-items-center justify-content-between">
+                        <div class="search-bar d-flex align-items-center mr-3">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Search for rooms and offers">
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <button class="btn btn-light">
+                                <i class="fas fa-bell"></i>
+                            </button>
+                            <button class="btn btn-light mx-2">
+                                <i class="fas fa-toggle-on"></i> <!-- Switch icon -->
+                            </button>
+                            <img src="img/avatar.png" alt="Avatar" class="avatar-img">
+                        </div>
+                    </header>
+                </div>
+                <div class="content-container mt-4">
+                    <!-- New overview container -->
+                    <div class="overview-container p-4 mb-4">
+                        <h2 class="overview-title">Overview</h2>
+                        <div class="overview-content mt-3">
+                            <div class="row">
+                                <div class="col-md-2 col-12 d-flex align-items-center justify-content-between">
+                                    <h5>Check-in</h5>
+                                    <h1 class="overview-number">23</h1>
+                                </div>
+                                <div class="separator">|</div>
+                                <div class="col-md-2 col-12 d-flex align-items-center justify-content-between">
+                                    <h5>Check-out</h5>
+                                    <h1 class="overview-number">13</h1>
+                                </div>
+                                <div class="separator">|</div>
+                                <div class="col-md-2 col-12 d-flex align-items-center justify-content-between">
+                                    <h5>In hotel</h5>
+                                    <h1 class="overview-number">60</h1>
+                                </div>
+                                <div class="separator">|</div>
+                                <div class="col-md-2 col-12 d-flex align-items-center justify-content-between">
+                                    <h5>Available room</h5>
+                                    <h1 class="overview-number">10</h1>
+                                </div>
+                                <div class="separator">|</div>
+                                <div class="col-md-2 col-12 d-flex align-items-center justify-content-between">
+                                    <h5>Occupied room</h5>
+                                    <h1 class="overview-number">90</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Graph containers -->
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Occupancy Statistics</h5>
+                                    <canvas id="occupancyChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Maintenance Requests Over Time</h5>
+                                    <canvas id="maintenanceChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Graph containers -->
+                    <!-- New Room Status and Pie Chart containers -->
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Room Status</h5>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h6>Occupied rooms</h6>
+                                            <div class="d-flex justify-content-between">
+                                                <span>Clean</span><span class="overview-number">90</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span>Dirty</span><span class="overview-number">4</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span>Inspected</span><span class="overview-number">60</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <h6>Available rooms</h6>
+                                            <div class="d-flex justify-content-between">
+                                                <span>Clean</span><span class="overview-number">90</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span>Dirty</span><span class="overview-number">4</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span>Inspected</span><span class="overview-number">60</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Room Types Utilization</h5>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <canvas id="roomTypesChart" class="w-100" style="max-width: 250px; max-height: 250px;"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Room Status and Pie Chart containers -->
+                    <!-- Maintenance Requests and Recent Notifications containers -->
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Maintenance Requests</h5>
+                                    <div class="d-flex justify-content-between">
+                                        <span>Food could be better</span><span class="overview-number">A201</span>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex justify-content-between">
+                                        <span>Facilities are not enough for amount paid.</span><span class="overview-number">A101</span>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex justify-content-between">
+                                        <span>Room cleaning could be better.</span><span class="overview-number">A301</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Recent Notifications</h5>
+                                    <div class="d-flex justify-content-between">
+                                        <span>Food could be better</span><span class="overview-number">A201</span>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex justify-content-between">
+                                        <span>Facilities are not enough for amount paid.</span><span class="overview-number">A101</span>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex justify-content-between">
+                                        <span>Room cleaning could be better.</span><span class="overview-number">A301</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Maintenance Requests and Recent Notifications containers -->
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
