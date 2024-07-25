@@ -90,6 +90,7 @@ body {
 .nav-link.active {
     background-color: #E8F1FD;
     color: #1366D9 !important;
+    border-radius: 5px;
 }
 
 .content-container {
@@ -164,3 +165,94 @@ hr {
 .mt-3 {
     margin-top: 1rem !important;
 }
+
+/* Default light mode styles */
+
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #333333; 
+    color: #ffffff;
+}
+body.dark-mode .sidebar {
+    background-color: #444444 !important;
+    color: white !important;
+}
+
+/* Adjustments for dark mode on various elements */
+body.dark-mode .header {
+    background-color: #444444 !important; 
+}
+body.dark-mode .header-container {
+    background-color: #444444 !important;
+}
+body.dark-mode .card {
+    background-color: #555555;
+    color: #ffffff;
+}
+body.dark-mode .overview-container {
+    background-color: #444444 !important;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode canvas {
+    color: white !important;
+}
+body.dark-mode .content-container {
+    background-color: #333333;
+}
+body.dark-mode .nav-link.active {
+    background-color: #555555;
+
+}
+/* Adjust other elements as needed */
+/* styles.css */
+
+/* Default light mode styles */
+.navbar-toggler {
+    background-color: transparent; /* Transparent background */
+    border: none; /* Remove border if needed */
+}
+
+.navbar-toggler i {
+    color: #000; /* Dark icon color for light mode */
+}
+
+/* Dark mode styles */
+body.dark-mode .header .btn {
+    background-color: #4444;
+    border: none;
+}
+body.dark-mode  .btn-light {
+    color: white;
+}
+
+body.dark-mode .maintenanceChart {
+    color: white !important;
+}
+
+body.dark-mode .navbar-toggler i {
+    color: #fff; /* White icon color for dark mode */
+}
+body.dark-mode .header .search-bar {
+    background-color: #555555;
+
+}
+body.dark-mode .header .search-bar input {
+    background-color: #555555 !important;
+}
+body.dark-mode .input-group-prepend {
+    background-color: #555555 !important;
+    border-radius: 3px;
+}
+
+/* Add this to your styles.css or within a <style> tag in the <head> */
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 250px; /* Adjust width as needed */
+    overflow-y: auto; /* Allows scrolling if content overflows */
+}
+
