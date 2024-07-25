@@ -19,8 +19,13 @@ Data Visualization: Visualize data using charts and graphs.
 Theme Switcher: Switch between light and dark modes for better user experience.
 
 Technologies Used
+
 HTML: For structuring the web pages.
+
 CSS/SASS: For styling and making the UI visually appealing.
+
 JavaScript: For interactivity and dynamic content.
+
 Bootstrap: For responsive design and pre-built components.
+
 Chart.js/D3.js: For data visualization.
