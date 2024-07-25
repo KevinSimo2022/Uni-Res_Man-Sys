@@ -1,10 +1,10 @@
 # Uni-Res_Man-Sys
 
-Introduction
+_Introduction_
 
 The University Residence Management System is a dynamic and user-friendly dashboard designed to manage university residence operations efficiently. The system includes features for room management, maintenance requests, alerts and notifications, and data visualization. This project is developed using HTML, CSS, SASS, JavaScript, and Bootstrap for responsive design.
 
-Features
+_Features_
 
 Dashboard: Overview of residence operations, statistics, and alerts.
 
@@ -18,7 +18,7 @@ Data Visualization: Visualize data using charts and graphs.
 
 Theme Switcher: Switch between light and dark modes for better user experience.
 
-Technologies Used
+_Technologies Used_
 
 HTML: For structuring the web pages.
 
