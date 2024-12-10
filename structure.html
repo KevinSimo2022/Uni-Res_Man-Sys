@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Residence Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header>
+            <h1>University Residence Management System</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#rooms">Rooms</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section id="dashboard">
+                <h2>Dashboard</h2>
+                <div class="overview">
+                    <div class="card" id="room-availability-card">
+                        <h3>Room Availability</h3>
+                        <div id="room-availability"></div>
+                    </div>
+                    <div class="card" id="ongoing-offers-card">
+                        <h3>Ongoing Offers</h3>
+                        <div id="ongoing-offers"></div>
+                    </div>
+                    <div class="card" id="locations-card">
+                        <h3>Locations</h3>
+                        <div id="locations"></div>
+                    </div>
+                </div>
+            </section>
+            <section id="rooms">
+                <h2>Rooms</h2>
+                <div class="room-list">
+                    <div class="room-card">
+                        <h3>Room A101</h3>
+                        <p>Type: Single</p>
+                        <p>Price: $500/semester</p>
+                        <p>Amenities: Free WiFi, AC</p>
+                        <button>View Details</button>
+                    </div>
+                    <!-- More room cards -->
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 University Residence Management System</p>
+        </footer>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
